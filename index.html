@@ -109,6 +109,22 @@
 </section>
 <!-- End paper abstract -->
 
+<p>
+  In recent years, a new area of study called Neural Architecture Search (NAS) has emerged. NAS focuses on automating the creation of neural networks instead of relying on manual designs crafted by human researchers with their expertise. For instance, Google's AmoebaNet, a NAS approach, has achieved top-tier results in tasks like ImageNet Classification.
+</p>
+<p>
+However, a significant drawback to NAS techniques is that they demand a considerable amount of computational time, especially when dealing with large datasets. Additionally, even after identifying a network structure, optimizing its weights remains a crucial step in assessing the quality of the design choices. AmoebaNet, for example, employs a trial-and-error evolutionary approach to select different configurations, necessitating training for each configuration to evaluate its performance. Consequently, researchers often limit the range of options explored by NAS algorithms to strike a balance between speed and effectiveness.
+  
+</p>
+<p>
+However, NAS techniques often utilize datasets that may not be ideal for the entire NAS process. Specifically, not every sample in the dataset contributes positively, and in some cases, they can even hinder overall performance. This phenomenon is particularly noticeable in datasets commonly used for Image Classification tasks, such as ImageNet.
+</p><p>
+To address this issue, we have undertaken a study to explore how the size of the training dataset can be leveraged to reduce the time required for NAS. In this research, we assess various sampling methods for selecting a subset of a dataset, considering both supervised and unsupervised scenarios. Our investigation involves four NAS approaches from NAS-Bench-201.
+</p><p>
+For our evaluation, we employed CIFAR-100 as our dataset. As a baseline, the NAS approach known as DARTS achieved a top-1 accuracy of 53.75% with a search time of 54 hours using an RTX 2080 GPU by NVIDIA. Remarkably, we were able to achieve a top-1 accuracy of 75.20% within a significantly reduced search time of just 13 hours by utilizing only 25% of the training data with the same NAS approach.
+</p><p>
+Furthermore, when applying this approach to another NAS technique, GDAS, we found that it was possible to derive an architecture with performance comparable to the baseline while using only 50% of the training data.
+</p>
 
 
 
